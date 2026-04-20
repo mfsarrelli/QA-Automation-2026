@@ -11,7 +11,7 @@ def multiplicar(a,b):
 def dividir(a,b):
     return a/b
 
-def calculadora(opcion):
+def calculadora(opcion,a,b):
     if opcion == 1:
         resultado=sumar(a,b)
     elif opcion == 2:
@@ -23,26 +23,27 @@ def calculadora(opcion):
     return resultado
 
 ## MENU DE USUARIO
-print("BIENVENIDO A LA CALCULADORA\n")
-print("POR FAVOR ELIJA LA OPCION DESEADA:\n")
-print("1-SUMAR")
-print("2-RESTAR")
-print("3-MULTIPLICAR")
-print("4-DIVIDIR")
+if __name__ == "__main__":
+    print("BIENVENIDO A LA CALCULADORA\n")
+    print("POR FAVOR ELIJA LA OPCION DESEADA:\n")
+    print("1-SUMAR")
+    print("2-RESTAR")
+    print("3-MULTIPLICAR")
+    print("4-DIVIDIR")
 
 ## REVISION DE VALORES INGRESADOS POR EL USUARIO
-try:
-    opcion=int(input())
-    a=int(input("Ingrese el primer valor: "))
-    b=int(input("Ingrese el segundo valor: \n"))
+    try:
+        opcion=int(input())
+        a=int(input("Ingrese el primer valor: "))
+        b=int(input("Ingrese el segundo valor: \n"))
 
-    x=calculadora(opcion)
+        x=calculadora(opcion,a,b)
 
-except ZeroDivisionError:
-    print("ERROR!!! División por cero")
-except ValueError:
-    print("ERROR!! Entrada inválida, solo se permiten números enteros")
-finally:
-    print("Operación finalizada")
+    except ZeroDivisionError:
+        print("ERROR!!! División por cero")
+    except ValueError:
+        print("ERROR!! Entrada inválida, solo se permiten números enteros")
+    finally:
+        print("Operación finalizada")
 
-print(f"El resultado es: {x}")
+    print(f"El resultado es: {x}")
